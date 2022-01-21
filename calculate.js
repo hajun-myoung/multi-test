@@ -1,30 +1,35 @@
-function sumQuestion(){
-    // Description
-    // .question_a :
-    // .question_b :
-    // .question_c :
-    // .question_d :
-    // .question_e :
-    let ids = ['question_a', 'question_b', 'question_c', 'question_d', 'question_e'];
-    let sum = [];
+function sumQuestion() {
+  let type = [
+    "question_a",
+    "question_b",
+    "question_c",
+    "question_d",
+    "question_e",
+  ];
+  let sum = [];
 
-    // init sum array : if don't do this, sum has NaN elements
-    for(let i = 0; i < ids.length; i++){
-        sum[i] = 0;
+  // init sum array : if don't do this, sum has NaN elements
+  for (let i = 0; i < type.length; i++) {
+    sum[i] = 0;
+  }
+
+  for (let i = 0; i < type.length; i++) {
+    let newQuestionEle = document.querySelectorAll(
+      `div.${type[i]} input:checked`
+    );
+    for (let j = 0; j < newQuestionEle.length; j++) {
+      sum[i] += parseInt(newQuestionEle[j].value);
     }
+  }
 
-    for(let i = 0; i < ids.length; i++){
-        let newQuestionEle = document.querySelectorAll(`div.${ids[i]} input:checked`);
-        for(let j = 0; j < newQuestionEle.length; j++){
-            sum[i]+=parseInt(newQuestionEle[j].value);
-        }
-    }
+  for (let i = 0; i < type.length; i++) {
+    console.log(`${type[i]} SUM = ${sum[i]}`);
+  }
 
-    for(let i = 0; i < ids.length; i++){
-        console.log(`${ids[i]} SUM = ${sum[i]}`);
-    }
-
-    return sum;
+  return sum;
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("submit-btn").addEventListener("click", sumQuestion);
+});
 // sumQuestion(); //test
