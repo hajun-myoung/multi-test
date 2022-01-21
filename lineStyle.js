@@ -1,16 +1,10 @@
 function color(){
-    const bgColor = '#6DB1BF';
-    const bgColor2 = '#FFEAEC';
+    const EVEN_COLOR = '#6DB1BF';
+    const ODD_COLOR = '#FFEAEC';
     
     let elements = document.querySelectorAll('body > main > article.question > div');
-    let evenElems = Object.entries(elements).filter((_,i)=>i%2==0);
-    let oddElems = Object.entries(elements).filter((_,i)=>i%2==1);
-    
-    evenElems.forEach(item=>{
-        item[1].style.backgroundColor = bgColor;
-    })
-    oddElems.forEach(item=>{
-        item[1].style.backgroundColor = bgColor2;
+    Object.entries(elements).forEach((item,i)=>{
+        item[1].style.backgroundColor = i%2==0 ? EVEN_COLOR : ODD_COLOR;
     })
     
     console.log('Done : Coloring');
