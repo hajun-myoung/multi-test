@@ -1,18 +1,28 @@
-function DisplayPrice(price){
-    var val1 = 0;
-    for( i = 0; i < document.form1.price.length; i++ ){
-        if( document.form1.price[i].checked == true ){
-            val1 = document.form1.price[i].value;
+function sumQuestion(){
+    // Description
+    // .question_a :
+    // .question_b :
+    // .question_c :
+    // .question_d :
+    // .question_e :
+    let ids = ['question_a', 'question_b', 'question_c', 'question_d', 'question_e'];
+    let sum = [];
+
+    // init sum array : if don't do this, sum has NaN elements
+    for(let i = 0; i < ids.length; i++){
+        sum[i] = 0;
+    }
+
+    for(let i = 0; i < ids.length; i++){
+        let newQuestionEle = document.querySelectorAll(`div.${ids[i]} input:checked`);
+        for(let j = 0; j < newQuestionEle.length; j++){
+            sum[i]+=parseInt(newQuestionEle[j].value);
         }
     }
 
-    var val2 = 0;
-    for( i = 0; i < document.form2.price2.length; i++ ){
-        if( document.form2.price2[i].checked == true ){
-            val2 = document.form2.price2[i].value;
-        }
+    for(let i = 0; i < ids.length; i++){
+        console.log(`${ids[i]} SUM = ${sum[i]}`);
     }
 
-    var sum=parseInt(val1) + parseInt(val2);
-    document.getElementById('totalSum').value=sum;
+    return sum;
 }
