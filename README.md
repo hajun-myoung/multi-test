@@ -18,7 +18,7 @@
 
 - `solved` 나눈 질문 타입들을 submit시 어떻게 합할 것인가?
 
-  - jQuery를 이용, `querySelectorAll('div.question_id input:check')를 통해 특정 타입의 문제들에서 선택된 input 요소들의 배열 가져옴
+  - jQuery를 이용, `querySelectorAll('div.question_id input:check')`를 통해 특정 타입의 문제들에서 선택된 input 요소들의 배열 가져옴
 
   - 각 요소에 value 속성을 부여해서 해당 값을 합함
 
