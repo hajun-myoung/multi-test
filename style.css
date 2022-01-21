@@ -1,7 +1,27 @@
 /* whole */
 body{
     margin: 0;
-    padding: 0;    
+    padding: 0;
+}
+
+/* header */
+header{
+    text-align: center;
+}
+
+/* main */
+main{
+    padding: 10px;
+}
+
+main .notice{
+    font-size: 20px;
+    font-weight: bold;
+    color: #F00;
+}
+
+main .question div p{
+    font-size: 20px;
 }
 
 /* footer */
@@ -12,7 +32,23 @@ body{
     margin: 10px 0;
 }
 
-footer div{
+footer .info{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+footer div.copyright{
     color: #999;
     font-style: italic;
+
+    padding: 0 0 0 15px;
+}
+
+footer div.address{
+    color: #999;
+    font-style: italic;
+    text-align: right;
+
+    padding: 0 15px 0 0;
 }
