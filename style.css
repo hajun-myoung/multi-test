@@ -44,7 +44,7 @@ main .question div p{
 
 body main article.question div{
     display: grid;
-    grid-template-columns: 30px 1fr 1fr;
+    grid-template-columns: 40px 1fr 1fr;
     align-items: center;
 }
 

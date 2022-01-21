@@ -26,3 +26,5 @@ function sumQuestion(){
 
     return sum;
 }
+
+// sumQuestion(); //test
