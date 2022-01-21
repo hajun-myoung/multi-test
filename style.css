@@ -1,7 +1,15 @@
 /* whole */
+html{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 body{
     margin: 0;
     padding: 0;
+    
+    width: 800px;
 }
 
 /* header */
@@ -9,19 +17,51 @@ header{
     text-align: center;
 }
 
+header h1{
+    margin: 21px 0 0 0;
+}
+
 /* main */
 main{
     padding: 10px;
+    text-align: center;
 }
 
 main .notice{
+    margin : 0 0 20px 0;
+
     font-size: 20px;
     font-weight: bold;
+    text-align: center;
+
+    background: #FBB;
     color: #F00;
 }
 
 main .question div p{
     font-size: 20px;
+}
+
+body main article.question div{
+    display: grid;
+    grid-template-columns: 30px 1fr 1fr;
+    align-items: center;
+}
+
+body > main > article.question > div > p:nth-child(1) {
+    font-weight: bold;
+}
+
+body > main > article.question > div > p:nth-child(2) {
+    margin: 0px;
+    padding: 20px 0 20px 10px;
+    text-align: left;
+}
+
+body main article.question div div{
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20px 0 0;
 }
 
 /* footer */
