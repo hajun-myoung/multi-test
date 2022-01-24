@@ -24,6 +24,9 @@ function sumQuestion() {
 
   for (let i = 0; i < type.length; i++) {
     console.log(`${type[i]} SUM = ${sum[i]}`);
+    alert(
+      `${type[i][type[i].length - 1].toUpperCase()} 타입 문항 총점 : ${sum[i]}`
+    );
   }
 
   return sum;
@@ -32,4 +35,5 @@ function sumQuestion() {
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("submit-btn").addEventListener("click", sumQuestion);
 });
+
 // sumQuestion(); //test

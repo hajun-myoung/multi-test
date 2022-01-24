@@ -1,5 +1,7 @@
 # 다중지능검사 페이지
 
+깃허브 Pages로 [디플로잉](https://hajun-myoung.github.io/multi-test/) 중
+
 ## 목표
 
 - n개의 질문 타입(지능 타입)에 대한 질문들이 주어짐
