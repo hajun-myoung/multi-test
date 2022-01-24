@@ -73,6 +73,15 @@ body > main > article.question > div > div > label > p{
     font-size: 16px;
 }
 
+#submit-btn:hover{
+    animation: 0.3s linear infinite alternate rotating;
+}
+
+@keyframes rotating{
+    from { transform: rotate(-6deg); }
+    to { transform: rotate(6deg); }
+}
+
 /* footer */
 footer{
     margin: 0 0 30px 0;
