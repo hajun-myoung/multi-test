@@ -1,4 +1,4 @@
-let questions = [
+const QUESTIONS = [
   {
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit?",
     type: "a",
@@ -138,7 +138,7 @@ let choice = [
 
 function generate() {
   let tar = document.getElementsByClassName("question")[0];
-  questions.forEach((item) => {
+  QUESTIONS.forEach((item) => {
     // 문항을 감싸는 div
     let newDiv = document.createElement("div");
     newDiv.className += `question_${item.type}`;
@@ -164,6 +164,8 @@ function generate() {
     for (let cnt = 0; cnt < CHOICE_COUNT; cnt++) {
       let newInput = document.createElement("input");
       let newLabel = document.createElement("label");
+
+      // "아주" "그렇다" 사이 줄바꿈을 위해 두 개의 P element를 이용
       let newP_tag_inLabel_1 = document.createElement("p");
       let newP_tag_inLabel_2 = document.createElement("p");
       let newLabelTxt1 = document.createTextNode(choice[cnt][0]);
