@@ -1,485 +1,58 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>다중지능검사</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="./javascript/lineStyle.js"></script>
-  <script src="./javascript/calculate.js"></script>
-  <!-- bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>다중지능검사</title>
+    <script src="javascript/generateQuestionElems.js"></script>
+    <script src="./javascript/lineStyle.js"></script>
+    <script src="./javascript/calculate.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>&lt다중지능검사&gt</h1>
+    </header>
 
-<header>
-  <h1>
-    &lt다중지능검사&gt
-  </h1>
-</header>
+    <main>
+      <article class="notice">
+        모든 문제에 답하지 않으면 정확한 결과를 얻을 수 없습니다!
+      </article>
 
-<main>
+      <!-- Proplem type list | 문제 타입 요약 -->
+      <!--   
+      type A : Q01, Q03, Q04, Q07, Q13
+      type B : Q02, Q15, Q17, Q19, Q20
+      type C : Q08, Q09, Q16, Q18, Q23
+      type D : Q05, Q10, Q11, Q22, Q24
+      type E : Q06, Q12, Q14, Q21, Q25
+      -->
 
-  <article class="notice">
-    모든 문제에 답하지 않으면 정확한 결과를 얻을 수 없습니다!
-  </article>
+      <article class="question"></article>
 
-  <!-- Proplem type list | 문제 타입 요약 -->
-  <!--   
-    type A : Q01, Q03, Q04, Q07, Q13
-    type B : Q02, Q15, Q17, Q19, Q20
-    type C : Q08, Q09, Q16, Q18, Q23
-    type D : Q05, Q10, Q11, Q22, Q24
-    type E : Q06, Q12, Q14, Q21, Q25
-   -->
+      <article>
+        <button type="button" class="btn btn-primary" id="submit-btn">
+          제출하기
+        </button>
+      </article>
+    </main>
 
-  <article class="question">
-
-    <div class="question_a">
-      <p>Q1</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-      <div class="choice">
-        <input type="radio" name="q1" class="q1" id="choice1" value="1">
-          <label for="choice1">아주<br>그렇다</label>
-        <input type="radio" name="q1" class="q1" id="choice2" value="2">
-          <label for="choice2">조금<br>그렇다</label>
-        <input type="radio" name="q1" class="q1" id="choice3" value="3">
-          <label for="choice3">그저<br>그렇다</label>
-        <input type="radio" name="q1" class="q1" id="choice4" value="4">
-          <label for="choice4">조금<br>아니다</label>
-        <input type="radio" name="q1" class="q1" id="choice5" value="5">
-          <label for="choice5">전혀<br>아니다</label>
+    <footer>
+      <div class="divider"></div>
+      <div class="info">
+        <div class="copyright">
+          Copyright @명하준, 2022. All rights reserved
+        </div>
+        <div class="address">Somewhere</div>
       </div>
-    </div>
-
-    <div class="question_b">
-      <p>Q2</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-      <div class="choice">
-        <input type="radio" name="q2" class="q2" id="choice1" value="1">
-          <label for="choice1">아주<br>그렇다</label>
-        <input type="radio" name="q2" class="q2" id="choice2" value="2">
-          <label for="choice2">조금<br>그렇다</label>
-        <input type="radio" name="q2" class="q2" id="choice3" value="3">
-          <label for="choice3">그저<br>그렇다</label>
-        <input type="radio" name="q2" class="q2" id="choice4" value="4">
-          <label for="choice4">조금<br>아니다</label>
-        <input type="radio" name="q2" class="q2" id="choice5" value="5">
-          <label for="choice5">전혀<br>아니다</label>
-      </div>
-    </div>
-
-    <div class="question_a">
-      <p>Q3</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-      <div class="choice">
-        <input type="radio" name="q3" class="q3" id="choice1" value="1">
-          <label for="choice1">아주<br>그렇다</label>
-        <input type="radio" name="q3" class="q3" id="choice2" value="2">
-          <label for="choice2">조금<br>그렇다</label>
-        <input type="radio" name="q3" class="q3" id="choice3" value="3">
-          <label for="choice3">그저<br>그렇다</label>
-        <input type="radio" name="q3" class="q3" id="choice4" value="4">
-          <label for="choice4">조금<br>아니다</label>
-        <input type="radio" name="q3" class="q3" id="choice5" value="5">
-          <label for="choice5">전혀<br>아니다</label>
-      </div>
-    </div>
-
-    <div class="question_a">
-      <p>Q4</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-      <div class="choice">
-        <input type="radio" name="q4" class="q4" id="choice1" value="1">
-          <label for="choice1">아주<br>그렇다</label>
-        <input type="radio" name="q4" class="q4" id="choice2" value="2">
-          <label for="choice2">조금<br>그렇다</label>
-        <input type="radio" name="q4" class="q4" id="choice3" value="3">
-          <label for="choice3">그저<br>그렇다</label>
-        <input type="radio" name="q4" class="q4" id="choice4" value="4">
-          <label for="choice4">조금<br>아니다</label>
-        <input type="radio" name="q4" class="q4" id="choice5" value="5">
-          <label for="choice5">전혀<br>아니다</label>
-      </div>
-    </div>
-
-    <div class="question_d">
-      <p>Q5</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-      <div class="choice">
-        <input type="radio" name="q5" class="q5" id="choice1" value="1">
-          <label for="choice1">아주<br>그렇다</label>
-        <input type="radio" name="q5" class="q5" id="choice2" value="2">
-          <label for="choice2">조금<br>그렇다</label>
-        <input type="radio" name="q5" class="q5" id="choice3" value="3">
-          <label for="choice3">그저<br>그렇다</label>
-        <input type="radio" name="q5" class="q5" id="choice4" value="4">
-          <label for="choice4">조금<br>아니다</label>
-        <input type="radio" name="q5" class="q5" id="choice5" value="5">
-          <label for="choice5">전혀<br>아니다</label>
-      </div>
-    </div>
-
-    <div class="question_e">
-      <p>Q6</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-      <div class="choice">
-        <input type="radio" name="q6" class="q6" id="choice1" value="1">
-          <label for="choice1">아주<br>그렇다</label>
-        <input type="radio" name="q6" class="q6" id="choice2" value="2">
-          <label for="choice2">조금<br>그렇다</label>
-        <input type="radio" name="q6" class="q6" id="choice3" value="3">
-          <label for="choice3">그저<br>그렇다</label>
-        <input type="radio" name="q6" class="q6" id="choice4" value="4">
-          <label for="choice4">조금<br>아니다</label>
-        <input type="radio" name="q6" class="q6" id="choice5" value="5">
-          <label for="choice5">전혀<br>아니다</label>
-      </div>
-    </div>
-
-    <div class="question_a">
-      <p>Q7</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-      <div class="choice">
-        <input type="radio" name="q7" class="q7" id="choice1" value="1">
-          <label for="choice1">아주<br>그렇다</label>
-        <input type="radio" name="q7" class="q7" id="choice2" value="2">
-          <label for="choice2">조금<br>그렇다</label>
-        <input type="radio" name="q7" class="q7" id="choice3" value="3">
-          <label for="choice3">그저<br>그렇다</label>
-        <input type="radio" name="q7" class="q7" id="choice4" value="4">
-          <label for="choice4">조금<br>아니다</label>
-        <input type="radio" name="q7" class="q7" id="choice5" value="5">
-          <label for="choice5">전혀<br>아니다</label>
-      </div>
-    </div>
-
-    <div class="question_c">
-      <p>Q8</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-      <div class="choice">
-        <input type="radio" name="q8" class="q8" id="choice1" value="1">
-          <label for="choice1">아주<br>그렇다</label>
-        <input type="radio" name="q8" class="q8" id="choice2" value="2">
-          <label for="choice2">조금<br>그렇다</label>
-        <input type="radio" name="q8" class="q8" id="choice3" value="3">
-          <label for="choice3">그저<br>그렇다</label>
-        <input type="radio" name="q8" class="q8" id="choice4" value="4">
-          <label for="choice4">조금<br>아니다</label>
-        <input type="radio" name="q8" class="q8" id="choice5" value="5">
-          <label for="choice5">전혀<br>아니다</label>
-      </div>
-    </div>
-
-    <div class="question_c">
-      <p>Q9</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-      <div class="choice">
-        <input type="radio" name="q9" class="q9" id="choice1" value="1">
-          <label for="choice1">아주<br>그렇다</label>
-        <input type="radio" name="q9" class="q9" id="choice2" value="2">
-          <label for="choice2">조금<br>그렇다</label>
-        <input type="radio" name="q9" class="q9" id="choice3" value="3">
-          <label for="choice3">그저<br>그렇다</label>
-        <input type="radio" name="q9" class="q9" id="choice4" value="4">
-          <label for="choice4">조금<br>아니다</label>
-        <input type="radio" name="q9" class="q9" id="choice5" value="5">
-          <label for="choice5">전혀<br>아니다</label>
-      </div>
-    </div>
-
-    <div class="question_d">
-      <p>Q10</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-      <div class="choice">
-        <input type="radio" name="q10" class="q10" id="choice1" value="1">
-          <label for="choice1">아주<br>그렇다</label>
-        <input type="radio" name="q10" class="q10" id="choice2" value="2">
-          <label for="choice2">조금<br>그렇다</label>
-        <input type="radio" name="q10" class="q10" id="choice3" value="3">
-          <label for="choice3">그저<br>그렇다</label>
-        <input type="radio" name="q10" class="q10" id="choice4" value="4">
-          <label for="choice4">조금<br>아니다</label>
-        <input type="radio" name="q10" class="q10" id="choice5" value="5">
-          <label for="choice5">전혀<br>아니다</label>
-      </div>
-    </div>
-
-    <div class="question_d">
-      <p>Q11</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-      <div class="choice">
-        <input type="radio" name="q11" class="q11" id="choice1" value="1">
-          <label for="choice1">아주<br>그렇다</label>
-        <input type="radio" name="q11" class="q11" id="choice2" value="2">
-          <label for="choice2">조금<br>그렇다</label>
-        <input type="radio" name="q11" class="q11" id="choice3" value="3">
-          <label for="choice3">그저<br>그렇다</label>
-        <input type="radio" name="q11" class="q11" id="choice4" value="4">
-          <label for="choice4">조금<br>아니다</label>
-        <input type="radio" name="q11" class="q11" id="choice5" value="5">
-          <label for="choice5">전혀<br>아니다</label>
-      </div>
-    </div>
-
-    <div class="question_e">
-      <p>Q12</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-      <div class="choice">
-        <input type="radio" name="q12" class="q12" id="choice1" value="1">
-          <label for="choice1">아주<br>그렇다</label>
-        <input type="radio" name="q12" class="q12" id="choice2" value="2">
-          <label for="choice2">조금<br>그렇다</label>
-        <input type="radio" name="q12" class="q12" id="choice3" value="3">
-          <label for="choice3">그저<br>그렇다</label>
-        <input type="radio" name="q12" class="q12" id="choice4" value="4">
-          <label for="choice4">조금<br>아니다</label>
-        <input type="radio" name="q12" class="q12" id="choice5" value="5">
-          <label for="choice5">전혀<br>아니다</label>
-      </div>
-    </div>
-
-    <div class="question_a">
-      <p>Q13</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-      <div class="choice">
-        <input type="radio" name="q13" class="q13" id="choice1" value="1">
-          <label for="choice1">아주<br>그렇다</label>
-        <input type="radio" name="q13" class="q13" id="choice2" value="2">
-          <label for="choice2">조금<br>그렇다</label>
-        <input type="radio" name="q13" class="q13" id="choice3" value="3">
-          <label for="choice3">그저<br>그렇다</label>
-        <input type="radio" name="q13" class="q13" id="choice4" value="4">
-          <label for="choice4">조금<br>아니다</label>
-        <input type="radio" name="q13" class="q13" id="choice5" value="5">
-          <label for="choice5">전혀<br>아니다</label>
-      </div>
-    </div>
-
-    <div class="question_e">
-      <p>Q14</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-      <div class="choice">
-        <input type="radio" name="q14" class="q14" id="choice1" value="1">
-          <label for="choice1">아주<br>그렇다</label>
-        <input type="radio" name="q14" class="q14" id="choice2" value="2">
-          <label for="choice2">조금<br>그렇다</label>
-        <input type="radio" name="q14" class="q14" id="choice3" value="3">
-          <label for="choice3">그저<br>그렇다</label>
-        <input type="radio" name="q14" class="q14" id="choice4" value="4">
-          <label for="choice4">조금<br>아니다</label>
-        <input type="radio" name="q14" class="q14" id="choice5" value="5">
-          <label for="choice5">전혀<br>아니다</label>
-      </div>
-    </div>
-
-    <div class="question_b">
-      <p>Q15</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-      <div class="choice">
-        <input type="radio" name="q15" class="q15" id="choice1" value="1">
-          <label for="choice1">아주<br>그렇다</label>
-        <input type="radio" name="q15" class="q15" id="choice2" value="2">
-          <label for="choice2">조금<br>그렇다</label>
-        <input type="radio" name="q15" class="q15" id="choice3" value="3">
-          <label for="choice3">그저<br>그렇다</label>
-        <input type="radio" name="q15" class="q15" id="choice4" value="4">
-          <label for="choice4">조금<br>아니다</label>
-        <input type="radio" name="q15" class="q15" id="choice5" value="5">
-          <label for="choice5">전혀<br>아니다</label>
-      </div>
-    </div>
-
-    <div class="question_c">
-      <p>Q16</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-      <div class="choice">
-        <input type="radio" name="q16" class="q16" id="choice1" value="1">
-          <label for="choice1">아주<br>그렇다</label>
-        <input type="radio" name="q16" class="q16" id="choice2" value="2">
-          <label for="choice2">조금<br>그렇다</label>
-        <input type="radio" name="q16" class="q16" id="choice3" value="3">
-          <label for="choice3">그저<br>그렇다</label>
-        <input type="radio" name="q16" class="q16" id="choice4" value="4">
-          <label for="choice4">조금<br>아니다</label>
-        <input type="radio" name="q16" class="q16" id="choice5" value="5">
-          <label for="choice5">전혀<br>아니다</label>
-      </div>
-    </div>
-
-    <div class="question_b">
-      <p>Q17</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-      <div class="choice">
-        <input type="radio" name="q17" class="q17" id="choice1" value="1">
-          <label for="choice1">아주<br>그렇다</label>
-        <input type="radio" name="q17" class="q17" id="choice2" value="2">
-          <label for="choice2">조금<br>그렇다</label>
-        <input type="radio" name="q17" class="q17" id="choice3" value="3">
-          <label for="choice3">그저<br>그렇다</label>
-        <input type="radio" name="q17" class="q17" id="choice4" value="4">
-          <label for="choice4">조금<br>아니다</label>
-        <input type="radio" name="q17" class="q17" id="choice5" value="5">
-          <label for="choice5">전혀<br>아니다</label>
-      </div>
-    </div>
-
-    <div class="question_c">
-      <p>Q18</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-      <div class="choice">
-        <input type="radio" name="q18" class="q18" id="choice1" value="1">
-          <label for="choice1">아주<br>그렇다</label>
-        <input type="radio" name="q18" class="q18" id="choice2" value="2">
-          <label for="choice2">조금<br>그렇다</label>
-        <input type="radio" name="q18" class="q18" id="choice3" value="3">
-          <label for="choice3">그저<br>그렇다</label>
-        <input type="radio" name="q18" class="q18" id="choice4" value="4">
-          <label for="choice4">조금<br>아니다</label>
-        <input type="radio" name="q18" class="q18" id="choice5" value="5">
-          <label for="choice5">전혀<br>아니다</label>
-      </div>
-    </div>
-
-    <div class="question_b">
-      <p>Q19</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-      <div class="choice">
-        <input type="radio" name="q19" class="q19" id="choice1" value="1">
-          <label for="choice1">아주<br>그렇다</label>
-        <input type="radio" name="q19" class="q19" id="choice2" value="2">
-          <label for="choice2">조금<br>그렇다</label>
-        <input type="radio" name="q19" class="q19" id="choice3" value="3">
-          <label for="choice3">그저<br>그렇다</label>
-        <input type="radio" name="q19" class="q19" id="choice4" value="4">
-          <label for="choice4">조금<br>아니다</label>
-        <input type="radio" name="q19" class="q19" id="choice5" value="5">
-          <label for="choice5">전혀<br>아니다</label>
-      </div>
-    </div>
-
-    <div class="question_b">
-      <p>Q20</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-      <div class="choice">
-        <input type="radio" name="q20" class="q20" id="choice1" value="1">
-          <label for="choice1">아주<br>그렇다</label>
-        <input type="radio" name="q20" class="q20" id="choice2" value="2">
-          <label for="choice2">조금<br>그렇다</label>
-        <input type="radio" name="q20" class="q20" id="choice3" value="3">
-          <label for="choice3">그저<br>그렇다</label>
-        <input type="radio" name="q20" class="q20" id="choice4" value="4">
-          <label for="choice4">조금<br>아니다</label>
-        <input type="radio" name="q20" class="q20" id="choice5" value="5">
-          <label for="choice5">전혀<br>아니다</label>
-      </div>
-    </div>
-
-    <div class="question_e">
-      <p>Q21</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-      <div class="choice">
-        <input type="radio" name="q21" class="q21" id="choice1" value="1">
-          <label for="choice1">아주<br>그렇다</label>
-        <input type="radio" name="q21" class="q21" id="choice2" value="2">
-          <label for="choice2">조금<br>그렇다</label>
-        <input type="radio" name="q21" class="q21" id="choice3" value="3">
-          <label for="choice3">그저<br>그렇다</label>
-        <input type="radio" name="q21" class="q21" id="choice4" value="4">
-          <label for="choice4">조금<br>아니다</label>
-        <input type="radio" name="q21" class="q21" id="choice5" value="5">
-          <label for="choice5">전혀<br>아니다</label>
-      </div>
-    </div>
-
-    <div class="question_d">
-      <p>Q22</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-      <div class="choice">
-        <input type="radio" name="q22" class="q22" id="choice1" value="1">
-          <label for="choice1">아주<br>그렇다</label>
-        <input type="radio" name="q22" class="q22" id="choice2" value="2">
-          <label for="choice2">조금<br>그렇다</label>
-        <input type="radio" name="q22" class="q22" id="choice3" value="3">
-          <label for="choice3">그저<br>그렇다</label>
-        <input type="radio" name="q22" class="q22" id="choice4" value="4">
-          <label for="choice4">조금<br>아니다</label>
-        <input type="radio" name="q22" class="q22" id="choice5" value="5">
-          <label for="choice5">전혀<br>아니다</label>
-      </div>
-    </div>
-
-    <div class="question_c">
-      <p>Q23</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-      <div class="choice">
-        <input type="radio" name="q23" class="q23" id="choice1" value="1">
-          <label for="choice1">아주<br>그렇다</label>
-        <input type="radio" name="q23" class="q23" id="choice2" value="2">
-          <label for="choice2">조금<br>그렇다</label>
-        <input type="radio" name="q23" class="q23" id="choice3" value="3">
-          <label for="choice3">그저<br>그렇다</label>
-        <input type="radio" name="q23" class="q23" id="choice4" value="4">
-          <label for="choice4">조금<br>아니다</label>
-        <input type="radio" name="q23" class="q23" id="choice5" value="5">
-          <label for="choice5">전혀<br>아니다</label>
-      </div>
-    </div>
-
-    <div class="question_d">
-      <p>Q24</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-      <div class="choice">
-        <input type="radio" name="q24" class="q24" id="choice1" value="1">
-          <label for="choice1">아주<br>그렇다</label>
-        <input type="radio" name="q24" class="q24" id="choice2" value="2">
-          <label for="choice2">조금<br>그렇다</label>
-        <input type="radio" name="q24" class="q24" id="choice3" value="3">
-          <label for="choice3">그저<br>그렇다</label>
-        <input type="radio" name="q24" class="q24" id="choice4" value="4">
-          <label for="choice4">조금<br>아니다</label>
-        <input type="radio" name="q24" class="q24" id="choice5" value="5">
-          <label for="choice5">전혀<br>아니다</label>
-      </div>
-    </div>
-
-    <div class="question_e">
-      <p>Q25</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-      <div class="choice">
-        <input type="radio" name="q25Q25" class="q25Q25" id="choice1" value="1">
-          <label for="choice1">아주<br>그렇다</label>
-        <input type="radio" name="q25Q25" class="q25Q25" id="choice2" value="2">
-          <label for="choice2">조금<br>그렇다</label>
-        <input type="radio" name="q25Q25" class="q25Q25" id="choice3" value="3">
-          <label for="choice3">그저<br>그렇다</label>
-        <input type="radio" name="q25Q25" class="q25Q25" id="choice4" value="4">
-          <label for="choice4">조금<br>아니다</label>
-        <input type="radio" name="q25Q25" class="q25Q25" id="choice5" value="5">
-          <label for="choice5">전혀<br>아니다</label>
-      </div>
-    </div>
-    
-  </article>
-
-  <article>
-    <button type="button" class="btn btn-primary" id="submit-btn">제출하기</button>
-  </article>
-
-</main>
-
-<footer>
-  <div class="divider"></div>
-  <div class="info">
-    <div class="copyright">
-      Copyright @명하준, 2022. All rights reserved
-    </div>
-    <div class="address">
-      Somewhere
-    </div>
-  </div>
-</footer>
-
-</body>
+    </footer>
+  </body>
 </html>

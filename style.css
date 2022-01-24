@@ -38,15 +38,15 @@ main .notice{
     color: #F00;
 }
 
-main .question div p{
-    font-size: 20px;
-    margin: 0;
-}
-
 body main article.question div{
     display: grid;
     grid-template-columns: 50px 1fr 1fr;
     align-items: center;
+}
+
+body main article.question div p{
+    font-size: 20px;
+    margin: 0;
 }
 
 body > main > article.question > div > p:nth-child(1) {
@@ -67,6 +67,10 @@ body main article.question div div{
 
 body > main > article:nth-child(3){
     margin: 20px 0 0 0;
+}
+
+body > main > article.question > div > div > label > p{
+    font-size: 16px;
 }
 
 /* footer */
