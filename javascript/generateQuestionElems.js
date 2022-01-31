@@ -136,9 +136,9 @@ let choice = [
   ["전혀", "아니다"],
 ];
 
-function generate() {
+function generate(startNum, endNum) {
   let tar = document.getElementsByClassName("question")[0];
-  QUESTIONS.forEach((item) => {
+  QUESTIONS.slice(startNum, endNum - startNum + 1).forEach((item) => {
     // 문항을 감싸는 div
     let newDiv = document.createElement("div");
     newDiv.className += `question_${item.type}`;
@@ -194,4 +194,6 @@ function generate() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", generate);
+document.addEventListener("DOMContentLoaded", function () {
+  generate(1, 10);
+});
