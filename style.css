@@ -71,6 +71,26 @@ body main article#question ul li div div{
     padding: 0 20px 0 0;
 }
 
+/* prev next arrow buttons */
+body > main > article:nth-child(5) > div.pageControl{
+    margin: 20px;
+}
+
+body > main > article:nth-child(5) > div.pageControl > span.pageArrow > a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #FFF;
+    background: #04AA6D;
+
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+}
+
 /* below the questions, some buttons */
 
 body > main > article:nth-child(3){
