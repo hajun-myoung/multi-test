@@ -13,49 +13,73 @@ document.addEventListener("DOMContentLoaded", () => {
   // prev button
   pageArrows[0].addEventListener("click", function (e) {
     e.preventDefault();
-    scrollTo(0, 0);
     slidePrev();
+    updateNum();
   });
 
   pageArrows[1].addEventListener("click", function (e) {
     e.preventDefault();
-    scrollTo(0, 0);
     slideNext();
+    updateNum();
   });
 });
 
 let currentSlide = 0;
 
+const PAGE_START = 0;
+const PAGE_END = 2;
+
 function slideNext() {
-  let from = -(800 * currentSlide);
-  let to = from - 800;
-  slides.animate(
-    {
-      marginLeft: [from + "px", to + "px"],
-    },
-    {
-      duration: 500,
-      easing: "ease",
-      iterations: 1,
-      fill: "both",
-    }
-  );
-  currentSlide++;
+  if (currentSlide < PAGE_END) {
+    let from = -(800 * currentSlide);
+    let to = from - 800;
+    slides.animate(
+      {
+        marginLeft: [from + "px", to + "px"],
+      },
+      {
+        duration: 500,
+        easing: "ease",
+        iterations: 1,
+        fill: "both",
+      }
+    );
+    questionElem.scroll({
+      top: 0,
+      behavior: "smooth",
+    });
+    currentSlide++;
+  } else {
+    alert("마지막 페이지입니다!");
+  }
 }
 
 function slidePrev() {
-  let from = -(800 * currentSlide);
-  let to = from + 800;
-  slides.animate(
-    {
-      marginLeft: [from + "px", to + "px"],
-    },
-    {
-      duration: 500,
-      easing: "ease",
-      iterations: 1,
-      fill: "both",
-    }
-  );
-  currentSlide--;
+  if (currentSlide > PAGE_START) {
+    let from = -(800 * currentSlide);
+    let to = from + 800;
+    slides.animate(
+      {
+        marginLeft: [from + "px", to + "px"],
+      },
+      {
+        duration: 500,
+        easing: "ease",
+        iterations: 1,
+        fill: "both",
+      }
+    );
+    questionElem.scroll({
+      top: 0,
+      behavior: "smooth",
+    });
+    currentSlide--;
+  } else {
+    alert("시작 페이지입니다!");
+  }
+}
+
+function updateNum() {
+  let pageNumElem = document.getElementById("pageNum");
+  pageNumElem.innerHTML = `${currentSlide + 1}/${PAGE_END + 1}`;
 }

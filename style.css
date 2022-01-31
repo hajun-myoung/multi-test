@@ -149,9 +149,10 @@ footer div.address{
 /* slider */
 #question {
     width: 800px;
-    height: 2500px;
+    height: 400px;
 
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 #question > ul{
@@ -159,7 +160,7 @@ footer div.address{
     margin: 0;
 
     width: 4000px;
-    height: 2500px;
+    height: auto;
 
     display: flex;
 }
