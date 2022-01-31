@@ -80,6 +80,8 @@ function slidePrev() {
 }
 
 function updateNum() {
-  let pageNumElem = document.getElementById("pageNum");
-  pageNumElem.innerHTML = `${currentSlide + 1}/${PAGE_END + 1}`;
+  let pageNumElem = document.getElementsByClassName("pageNum");
+  for (let element of pageNumElem) {
+    element.innerHTML = `${currentSlide + 1}/${PAGE_END + 1}`;
+  }
 }
