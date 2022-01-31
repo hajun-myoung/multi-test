@@ -137,8 +137,9 @@ let choice = [
 ];
 
 function generate(startNum, endNum) {
+  // question article
   let tar = document.getElementsByClassName("question")[0];
-  QUESTIONS.slice(startNum, endNum - startNum + 1).forEach((item) => {
+  QUESTIONS.slice(startNum - 1, endNum - startNum + 1).forEach((item) => {
     // 문항을 감싸는 div
     let newDiv = document.createElement("div");
     newDiv.className += `question_${item.type}`;
@@ -197,3 +198,5 @@ function generate(startNum, endNum) {
 document.addEventListener("DOMContentLoaded", function () {
   generate(1, 10);
 });
+
+// export { generate };

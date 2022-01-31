@@ -73,7 +73,7 @@ body > main > article.question > div > div > label > p{
     font-size: 16px;
 }
 
-#submit-btn:hover{
+body > main > article > div > button:hover{
     animation: 0.3s linear infinite alternate rotating;
 }
 
