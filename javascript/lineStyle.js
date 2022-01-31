@@ -3,7 +3,7 @@ function color() {
   const ODD_COLOR = "#FFEAEC";
 
   let elements = document.querySelectorAll(
-    "body > main > article.question > div"
+    "body > main > article#question > ul > li > div"
   );
   Object.entries(elements).forEach((item, i) => {
     item[1].style.backgroundColor = i % 2 == 0 ? EVEN_COLOR : ODD_COLOR;

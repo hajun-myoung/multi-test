@@ -124,9 +124,17 @@ const QUESTIONS = [
     type: "e",
     num: 25,
   },
+  {
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit?",
+    type: "e",
+    num: 26,
+  },
 ];
 
 const CHOICE_COUNT = 5;
+const PROBLEMS_IN_A_PAGE = 25;
+const PROBLEMS_AMOUNT = 71;
+const PAGE_COUNT = Math.ceil(PROBLEMS_AMOUNT / PROBLEMS_IN_A_PAGE);
 
 let choice = [
   ["아주", "그렇다"],
@@ -136,67 +144,75 @@ let choice = [
   ["전혀", "아니다"],
 ];
 
-function generate(startNum, endNum) {
+function generate() {
   // question article
-  let tar = document.getElementsByClassName("question")[0];
-  QUESTIONS.slice(startNum - 1, endNum - startNum + 1).forEach((item) => {
-    // 문항을 감싸는 div
-    let newDiv = document.createElement("div");
-    newDiv.className += `question_${item.type}`;
+  // let tar = document.getElementById("question");
+  for (let page = 0; page < PAGE_COUNT; page++) {
+    console.log(`page ${page} Loading`);
+    let newQuestionPage = document.getElementsByClassName("slide")[page];
+    QUESTIONS.slice(
+      page * PROBLEMS_IN_A_PAGE,
+      (page + 1) * PROBLEMS_IN_A_PAGE
+    ).forEach((item) => {
+      console.log(`item ${item.num} Loading`);
+      // 문항을 감싸는 div
+      let newDiv = document.createElement("div");
+      newDiv.className += `question_${item.type}`;
 
-    // 문항에 들어가는 p태그들 : 번호와 문제
-    let numberP_tag = document.createElement("p");
-    let questionP_tag = document.createElement("p");
+      // 문항에 들어가는 p태그들 : 번호와 문제
+      let numberP_tag = document.createElement("p");
+      let questionP_tag = document.createElement("p");
 
-    let numTxt = document.createTextNode(`Q${item.num}`);
-    let quetionTxt = document.createTextNode(item.text);
+      let numTxt = document.createTextNode(`Q${item.num}`);
+      let quetionTxt = document.createTextNode(item.text);
 
-    numberP_tag.appendChild(numTxt);
-    questionP_tag.appendChild(quetionTxt);
+      numberP_tag.appendChild(numTxt);
+      questionP_tag.appendChild(quetionTxt);
 
-    // 문항 Div에 연결
-    newDiv.appendChild(numberP_tag);
-    newDiv.appendChild(questionP_tag);
+      // 문항 Div에 연결
+      newDiv.appendChild(numberP_tag);
+      newDiv.appendChild(questionP_tag);
 
-    // 선택지 div와 자식 input, label
-    let choiceDiv = document.createElement("div");
-    choiceDiv.className += "choice";
+      // 선택지 div와 자식 input, label
+      let choiceDiv = document.createElement("div");
+      choiceDiv.className += "choice";
 
-    for (let cnt = 0; cnt < CHOICE_COUNT; cnt++) {
-      let newInput = document.createElement("input");
-      let newLabel = document.createElement("label");
+      for (let cnt = 0; cnt < CHOICE_COUNT; cnt++) {
+        let newInput = document.createElement("input");
+        let newLabel = document.createElement("label");
 
-      // "아주" "그렇다" 사이 줄바꿈을 위해 두 개의 P element를 이용
-      let newP_tag_inLabel_1 = document.createElement("p");
-      let newP_tag_inLabel_2 = document.createElement("p");
-      let newLabelTxt1 = document.createTextNode(choice[cnt][0]);
-      let newLabelTxt2 = document.createTextNode(choice[cnt][1]);
+        // "아주" "그렇다" 사이 줄바꿈을 위해 두 개의 P element를 이용
+        let newP_tag_inLabel_1 = document.createElement("p");
+        let newP_tag_inLabel_2 = document.createElement("p");
+        let newLabelTxt1 = document.createTextNode(choice[cnt][0]);
+        let newLabelTxt2 = document.createTextNode(choice[cnt][1]);
 
-      newP_tag_inLabel_1.appendChild(newLabelTxt1);
-      newP_tag_inLabel_2.appendChild(newLabelTxt2);
+        newP_tag_inLabel_1.appendChild(newLabelTxt1);
+        newP_tag_inLabel_2.appendChild(newLabelTxt2);
 
-      newInput.type = "radio";
-      newInput.name = `q${item.num}`;
-      newInput.id = `choice${cnt + 1}`;
-      newInput.value = `${cnt + 1}`;
+        newInput.type = "radio";
+        newInput.name = `q${item.num}`;
+        newInput.id = `choice${cnt + 1}`;
+        newInput.value = `${cnt + 1}`;
 
-      newLabel.for = `choice${cnt + 1}`;
+        newLabel.for = `choice${cnt + 1}`;
 
-      newLabel.appendChild(newP_tag_inLabel_1);
-      newLabel.appendChild(newP_tag_inLabel_2);
+        newLabel.appendChild(newP_tag_inLabel_1);
+        newLabel.appendChild(newP_tag_inLabel_2);
 
-      choiceDiv.appendChild(newInput);
-      choiceDiv.appendChild(newLabel);
-    }
+        choiceDiv.appendChild(newInput);
+        choiceDiv.appendChild(newLabel);
+      }
 
-    newDiv.appendChild(choiceDiv);
+      newDiv.appendChild(choiceDiv);
 
-    tar.appendChild(newDiv);
-  });
+      newQuestionPage.appendChild(newDiv);
+    });
+  }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  generate(1, 10);
+  generate();
 });
 
 // export { generate };

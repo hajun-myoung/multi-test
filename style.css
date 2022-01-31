@@ -1,4 +1,4 @@
-/* whole */
+/* default */
 html{
     width: 100%;
     display: flex;
@@ -12,6 +12,11 @@ body{
     width: 800px;
 }
 
+ol, ul{
+    list-style: none;
+    padding: 0 !important;
+}
+
 /* header */
 header{
     text-align: center;
@@ -23,7 +28,7 @@ header h1{
 
 /* main */
 main{
-    padding: 10px;
+    /* padding: 10px; */
     text-align: center;
 }
 
@@ -38,38 +43,41 @@ main .notice{
     color: #F00;
 }
 
-body main article.question div{
+body main article#question ul li div{
     display: grid;
     grid-template-columns: 50px 1fr 1fr;
     align-items: center;
 }
 
-body main article.question div p{
-    font-size: 20px;
+body main article#question ul li div p{
     margin: 0;
 }
 
-body > main > article.question > div > p:nth-child(1) {
+body > main > article#question > ul li div > p:nth-child(1) {
+    font-size: 20px;
     font-weight: bold;
 }
 
-body > main > article.question > div > p:nth-child(2) {
+body > main > article#question > ul li div > p:nth-child(2) {
+    font-size: 20px;
     margin: 0px;
     padding: 20px 0 20px 10px;
     text-align: left;
 }
 
-body main article.question div div{
+body main article#question ul li div div{
     display: flex;
     justify-content: space-around;
     padding: 0 20px 0 0;
 }
 
+/* below the questions, some buttons */
+
 body > main > article:nth-child(3){
     margin: 20px 0 0 0;
 }
 
-body > main > article.question > div > div > label > p{
+body > main > article#question > div > div > label > p{
     font-size: 16px;
 }
 
@@ -116,4 +124,26 @@ footer div.address{
     text-align: right;
 
     /* padding: 0 15px 0 0; */
+}
+
+/* slider */
+#question {
+    width: 800px;
+    height: 2500px;
+
+    overflow: hidden;
+}
+
+#question > ul{
+    padding: 0;
+    margin: 0;
+
+    width: 4000px;
+    height: 2500px;
+
+    display: flex;
+}
+
+#question > ul > li{
+    width: 800px;
 }
