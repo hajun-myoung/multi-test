@@ -76,7 +76,7 @@ body > main > article:nth-child(4) > div.pageControl{
     margin: 20px;
 }
 
-body > main > article:nth-child(4) > div.pageControl > span.pageArrow > a{
+body > main > article:nth-child(5) > div.pageControl > span.pageArrow > a{
     text-decoration: none;
     font-size: 20px;
     color: #FFF;
@@ -89,6 +89,20 @@ body > main > article:nth-child(4) > div.pageControl > span.pageArrow > a{
     display: inline-block;
     align-items: center;
     justify-content: center;
+}
+
+/* user info */
+#userInfo{
+    display: flex;
+    justify-content: space-between;
+}
+
+#userInfo #userName{
+    text-align: left;
+}
+
+#userInfo #testingTime{
+    text-align: right;
 }
 
 /* progress bar */
