@@ -50,6 +50,10 @@ main .notice{
     color: #F00;
 }
 
+#question{
+    margin: 20px 0;
+}
+
 body main article#question ul li div{
     display: grid;
     grid-template-columns: 50px 1fr 1fr;
@@ -79,11 +83,11 @@ body main article#question ul li div div{
 }
 
 /* prev next arrow buttons */
-body > main > article:nth-child(4) > div.pageControl{
-    margin: 20px;
+body > main > article > div.pageControl{
+    margin: 20px 0;
 }
 
-body > main > article:nth-child(5) > div.pageControl > span.pageArrow > a{
+#controller > div.pageControl > span.pageArrow > a{
     text-decoration: none;
     font-size: 20px;
     color: #FFF;

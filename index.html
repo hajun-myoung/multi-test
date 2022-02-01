@@ -51,11 +51,23 @@
       </article>
 
       <div id="userInfo">
-        <span id="userName"> 검사자 : 아무개 님</span>
-        <span id="testingTime">
-          검사 일시 : 2021년 2월 1일 오후 7시 1분에 시작하셨습니다
-        </span>
+        <span id="userName"> 검사자 : </span>
+        <span id="testingTime"> 검사 일시 : </span>
       </div>
+
+      <script>
+        if (userName == null) userName = "익명의 사용자";
+        document.getElementById("userName").innerHTML += `${userName} 님`;
+        const date = new Date();
+        const year = date.getFullYear(),
+          month = date.getMonth() + 1,
+          day = date.getDay(),
+          hour = date.getHours(),
+          min = date.getMinutes();
+        document.getElementById(
+          "testingTime"
+        ).innerHTML += `${year}년 ${month}월 ${day}일 ${hour}시 ${min}분 시작하셨습니다`;
+      </script>
 
       <div id="progressBar">
         <span class="percentage">0%</span>
