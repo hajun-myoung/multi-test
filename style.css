@@ -17,6 +17,13 @@ ol, ul{
     padding: 0 !important;
 }
 
+h1{
+    font-family: 'Gaegu', cursive;
+    font-size: 48px !important;
+    font-weight: bold !important;
+    padding: 0 0 20px 0 ;
+}
+
 /* header */
 header{
     text-align: center;
