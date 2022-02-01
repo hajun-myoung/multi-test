@@ -72,11 +72,11 @@ body main article#question ul li div div{
 }
 
 /* prev next arrow buttons */
-body > main > article:nth-child(5) > div.pageControl{
+body > main > article:nth-child(4) > div.pageControl{
     margin: 20px;
 }
 
-body > main > article:nth-child(5) > div.pageControl > span.pageArrow > a{
+body > main > article:nth-child(4) > div.pageControl > span.pageArrow > a{
     text-decoration: none;
     font-size: 20px;
     color: #FFF;
@@ -89,6 +89,32 @@ body > main > article:nth-child(5) > div.pageControl > span.pageArrow > a{
     display: inline-block;
     align-items: center;
     justify-content: center;
+}
+
+/* progress bar */
+#progressBar{
+    width: 100%;
+    height: 20px;
+
+    display: flex;
+    /* justify-content: left; */
+}
+
+#progressBar .percentage{
+    width: 100px;
+    height: 100%;
+    
+    border-radius: 20px;
+    
+    background: linear-gradient(to right, blue, pink);
+    
+    font-size: 12px;
+    text-align: right;
+    color: #000;
+    
+    display: flex;
+    justify-content: right;
+    align-items: center;
 }
 
 /* below the questions, some buttons */
