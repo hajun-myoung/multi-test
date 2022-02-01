@@ -101,7 +101,7 @@ body > main > article:nth-child(4) > div.pageControl > span.pageArrow > a{
 }
 
 #progressBar .percentage{
-    width: 100px;
+    width: 0px;
     height: 100%;
     
     border-radius: 20px;
@@ -110,11 +110,13 @@ body > main > article:nth-child(4) > div.pageControl > span.pageArrow > a{
     
     font-size: 12px;
     text-align: right;
-    color: #000;
+    color: #FFF;
     
     display: flex;
     justify-content: right;
     align-items: center;
+    
+    transition: width 0.1s linear;
 }
 
 /* below the questions, some buttons */
