@@ -36,6 +36,11 @@
     />
   </head>
   <body>
+    <script>
+      let userName = prompt(
+        "성함을 입력해주세요. (결과페이지에 반영되니 실명으로 입력해주세요)"
+      );
+    </script>
     <header>
       <h1>&lt;다중지능검사&gt;</h1>
     </header>
@@ -66,7 +71,7 @@
         </ul>
       </article>
 
-      <article>
+      <article id="controller">
         <div class="pageControl">
           <span class="pageArrow Left">
             <a href="#">&lt;</a>

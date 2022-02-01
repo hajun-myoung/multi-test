@@ -1,14 +1,16 @@
-function sumQuestion() {
-  let type = [
-    "question_a",
-    "question_b",
-    "question_c",
-    "question_d",
-    "question_e",
-    "question_f",
-  ];
-  let sum = [];
+let sum = [];
+let MaxValue = [];
 
+const type = [
+  "question_a",
+  "question_b",
+  "question_c",
+  "question_d",
+  "question_e",
+  "question_f",
+];
+
+function sumQuestion() {
   // init sum array : if don't do this, sum has NaN elements
   for (let i = 0; i < type.length; i++) {
     sum[i] = 0;
@@ -31,8 +33,11 @@ function sumQuestion() {
   return sum;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("submit-btn").addEventListener("click", sumQuestion);
-});
+function calculateMaxVal() {
+  for (let i = 0; i < type.length; i++) {
+    let checkedEle = document.querySelectorAll(`div.${type[i]}`);
+    MaxValue[i] = checkedEle.length * 5;
+  }
+}
 
 // sumQuestion(); //test
