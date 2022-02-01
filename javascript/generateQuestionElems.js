@@ -379,7 +379,7 @@ function generate() {
       page * PROBLEMS_IN_A_PAGE,
       (page + 1) * PROBLEMS_IN_A_PAGE
     ).forEach((item) => {
-      console.log(`item ${item.num} Loading`);
+      // console.log(`item ${item.num} Loading`);
       // 문항을 감싸는 div
       let newDiv = document.createElement("div");
       newDiv.className += `question_${item.type}`;

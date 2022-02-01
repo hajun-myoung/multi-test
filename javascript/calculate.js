@@ -5,6 +5,7 @@ function sumQuestion() {
     "question_c",
     "question_d",
     "question_e",
+    "question_f",
   ];
   let sum = [];
 
@@ -14,19 +15,17 @@ function sumQuestion() {
   }
 
   for (let i = 0; i < type.length; i++) {
-    let newQuestionEle = document.querySelectorAll(
-      `div.${type[i]} input:checked`
-    );
-    for (let j = 0; j < newQuestionEle.length; j++) {
-      sum[i] += parseInt(newQuestionEle[j].value);
+    let checkedEle = document.querySelectorAll(`div.${type[i]} input:checked`);
+    for (let j = 0; j < checkedEle.length; j++) {
+      sum[i] += parseInt(checkedEle[j].value);
     }
   }
 
   for (let i = 0; i < type.length; i++) {
     console.log(`${type[i]} SUM = ${sum[i]}`);
-    alert(
-      `${type[i][type[i].length - 1].toUpperCase()} 타입 문항 총점 : ${sum[i]}`
-    );
+    // alert(
+    //   `${type[i][type[i].length - 1].toUpperCase()} 타입 문항 총점 : ${sum[i]}`
+    // );
   }
 
   return sum;
