@@ -15,12 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     slidePrev();
     updateNum();
+    updateBar("goPrev");
   });
 
+  // next button
   pageArrows[1].addEventListener("click", function (e) {
     e.preventDefault();
     slideNext();
     updateNum();
+    updateBar("goNext");
   });
 });
 
@@ -83,5 +86,14 @@ function updateNum() {
   let pageNumElem = document.getElementsByClassName("pageNum");
   for (let element of pageNumElem) {
     element.innerHTML = `${currentSlide + 1}/${PAGE_END + 1}`;
+  }
+}
+
+function updateBar(flag) {
+  let barElem = document.getElementById("progressBar");
+  if (flag == "goNext") {
+    barElem.value += (1 / (PAGE_END + 1)) * 100;
+  } else if (flag == "goPrev") {
+    barElem.value -= (1 / (PAGE_END + 1)) * 100;
   }
 }
