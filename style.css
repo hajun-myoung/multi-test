@@ -329,3 +329,108 @@ footer div.address{
 
     transition: width 0.1s linear;
 }
+
+@media only screen and (max-width: 800px) {
+    body{
+        width: 100%;
+    }
+
+    body main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    body > main > article.notice{
+        width: 100%;
+    }
+
+    #userInfo{
+        display: block;
+    }
+
+    #userInfo #userName{
+        display: block;
+        text-align: center;
+    }
+    
+    #userInfo #testingTime{
+        display: block;
+        text-align: center;
+    }
+
+    body main article#question{
+        width: 350px;
+    }
+
+    body main article#question ul{
+        width: 1750px;
+    }
+
+    body main article#question ul li{
+        width: 350px;
+    }
+
+    body main article#question ul li div{
+        display: flex;
+        flex-direction: column;
+
+        padding: 10px;
+    }
+
+    body > main > article#question > ul li div > p:nth-child(2){
+        margin: 0;
+        padding: 0;
+
+        text-align: center;
+    }
+
+    body main article#question ul li div div {
+        width: 100%;
+
+        padding: 0;
+
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #controller{
+        width: 100%;
+    }
+
+    body > footer > div.info{
+        flex-direction: column;
+    }
+
+    body > footer > div.info > div.copyright{
+        padding: 0;
+        text-align: center;
+    }
+
+    body > footer > div.info > div.address{
+        padding: 0;
+        text-align: center;
+    }
+
+    #major{
+        font-size: 34px;
+    }
+
+    #major > div.majorGraph{
+        width: 100%;
+    }
+
+    #major > div.majorDescription {
+        font-size: 28px;
+    }
+
+    #minor_1,
+    #minor_2{
+        font-size: 20px;
+    }
+
+    #minor_1 > div.minorGraph,
+    #minor_2 > div.minorGraph{
+        width: 100%;
+    }
+}
