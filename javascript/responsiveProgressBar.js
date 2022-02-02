@@ -20,7 +20,9 @@ function updateBar() {
   checked = document.querySelectorAll("input:checked").length;
   percentage = checked / PROBLEMS_AMOUNT;
 
-  progressBar.style.width = `${Math.ceil(percentage * 800)}px`;
+  progressBar.style.width = `${Math.ceil(
+    percentage * document.getElementById("progressBar").offsetWidth
+  )}px`;
   progressBar.innerHTML = `${Math.ceil(percentage * 100)}%`;
 
   if (Math.ceil(percentage * 100) < 5) progressBar.style.color = "#FFF";

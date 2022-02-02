@@ -100,7 +100,9 @@ function createResult() {
   majorGraph.innerHTML = `${Math.ceil(major_val * 100)}%`;
 
   setTimeout(() => {
-    majorGraph.style.width = major_val * 800 + "px";
+    majorGraph.style.width =
+      major_val * document.getElementsByClassName("majorGraph")[0].offsetWidth +
+      "px";
   }, 1000);
 
   majorGraphDiv.appendChild(majorGraph);
@@ -148,11 +150,17 @@ function createResult() {
   minorGraph_2.innerHTML = `${Math.ceil(minor2_val * 100)}%`;
 
   setTimeout(() => {
-    minorGraph_1.style.width = minor1_val * 800 + "px";
+    minorGraph_1.style.width =
+      minor1_val *
+        document.getElementsByClassName("minorGraph")[0].offsetWidth +
+      "px";
   }, 1000);
 
   setTimeout(() => {
-    minorGraph_2.style.width = minor2_val * 800 + "px";
+    minorGraph_2.style.width =
+      minor2_val *
+        document.getElementsByClassName("minorGraph")[1].offsetWidth +
+      "px";
   }, 1000);
 
   let minorDescription_1 = document.createElement("div");
