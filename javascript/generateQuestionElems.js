@@ -418,7 +418,7 @@ function generate() {
         newInput.type = "radio";
         newInput.name = `q${item.num}`;
         newInput.id = `choice${cnt + 1}`;
-        newInput.value = `${cnt + 1}`;
+        newInput.value = `${5 - cnt}`;
 
         newLabel.for = `choice${cnt + 1}`;
 
