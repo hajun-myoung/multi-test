@@ -28,14 +28,16 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 let currentSlide = 0;
+let pixels = 800;
 
 const PAGE_START = 0;
 const PAGE_END = 2;
 
 function slideNext() {
+  watchWidth();
   if (currentSlide < PAGE_END) {
-    let from = -(800 * currentSlide);
-    let to = from - 800;
+    let from = -(pixels * currentSlide);
+    let to = from - pixels;
     slides.animate(
       {
         marginLeft: [from + "px", to + "px"],
@@ -58,9 +60,10 @@ function slideNext() {
 }
 
 function slidePrev() {
+  watchWidth();
   if (currentSlide > PAGE_START) {
-    let from = -(800 * currentSlide);
-    let to = from + 800;
+    let from = -(pixels * currentSlide);
+    let to = from + pixels;
     slides.animate(
       {
         marginLeft: [from + "px", to + "px"],
@@ -96,4 +99,8 @@ function updateBar(flag) {
   } else if (flag == "goPrev") {
     barElem.value -= (1 / (PAGE_END + 1)) * 100;
   }
+}
+
+function watchWidth() {
+  pixels = document.getElementById("question").offsetWidth;
 }
