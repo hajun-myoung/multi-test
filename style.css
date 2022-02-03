@@ -260,16 +260,16 @@ footer div.address{
     transition: width 0.1s linear;
 }
 
-#minor_1{
+#minor{
     font-size: 24px;
     margin: 15px 0;
 }
 
-#minor_1 > div.minorDescription{
+#minor > div.minorDescription{
     font-size: 18px;
 }
 
-#minor_1 > div.minorGraph{
+#minor > div.minorGraph{
     width: 800px;
     height: 10px;
     border-radius: 20px;
@@ -279,42 +279,7 @@ footer div.address{
     display: flex;
 }
 
-#minor_1 > div.minorGraph > span {
-    background: linear-gradient(to right, skyblue, pink);
-
-    border-radius: 20px;
-
-    width: 0px;
-    height: 100%;
-    font-size: 10px;
-
-    display: flex;
-    justify-content: right;
-    align-items: center;
-
-    transition: width 0.1s linear;
-}
-
-#minor_2{
-    font-size: 24px;
-    margin: 15px 0;
-}
-
-#minor_2 > div.minorDescription{
-    font-size: 18px;
-}
-
-#minor_2 > div.minorGraph{
-    width: 800px;
-    height: 10px;
-    border-radius: 20px;
-    
-    background: #DDD;
-    
-    display: flex;
-}
-
-#minor_2 > div.minorGraph > span {
+#minor > div.minorGraph > span {
     background: linear-gradient(to right, skyblue, pink);
 
     border-radius: 20px;
@@ -424,13 +389,11 @@ footer div.address{
         font-size: 28px;
     }
 
-    #minor_1,
-    #minor_2{
+    #minor{
         font-size: 20px;
     }
 
-    #minor_1 > div.minorGraph,
-    #minor_2 > div.minorGraph{
+    #minor > div.minorGraph{
         width: 100%;
     }
 }

@@ -1,4 +1,3 @@
-let sum = [];
 let MaxValue = [];
 
 const type = [
@@ -9,6 +8,8 @@ const type = [
   "question_e",
   "question_f",
 ];
+
+let sum = [...Array(type.length).fill(0)];
 
 function sumQuestion() {
   // init sum array : if don't do this, sum has NaN elements
