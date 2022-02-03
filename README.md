@@ -90,6 +90,14 @@
 
   - `12ba2ac` 응시자 정보 표기 기능 구성 완료
 
+  - `fad28fa` `f280711` `f1a3312` favicon, thumnail & open graph 셋팅
+
+  - `b7e6728` `6a7de6f` 모바일 반응성 적용
+
+  - `a7d680a` radio 버튼 버그픽스 : value 재할당
+
+  - `0e41e11` 
+
 ## 개선점
 
 - jQuery의 제거 : 합산 함수, 프로그레스 바 반응 함수 등에서 jQuery 없이 동일한 기능을 구현
