@@ -2,6 +2,14 @@
 
 깃허브 Pages로 [디플로잉](https://hajun-myoung.github.io/multi-test/) 중
 
+본 페이지를 변형 및 이용하는 방법은
+
+- html, css 및 js에 경험이 없는 사용자의 경우 쉬운 가이드인 `how_to_use_ez-ver.md` (작성중)
+
+- 다룰 줄 아는 사용자의 경우 핵심 가이드인 `how_to_use_core-ver.md` (작성중)
+
+를 각각 참고
+
 ## 목표
 
 - n개의 질문 타입(지능 타입)에 대한 질문들이 주어짐
@@ -20,7 +28,8 @@
 
 - `solved` 나눈 질문 타입들을 submit시 어떻게 합할 것인가?
 
-  - jQuery를 이용, `querySelectorAll('div.question_id input:check')`를 통해 특정 타입의 문제들에서 선택된 input 요소들의 배열 가져옴
+  - jQuery를 이용, `querySelectorAll('div.question_id input:check')`를 통해 특정 타입의
+    문제들에서 선택된 input 요소들의 배열 가져옴
 
   - 각 요소에 value 속성을 부여해서 해당 값을 합함
 
@@ -54,7 +63,8 @@
 
   - **`c643f65` index.htmld에서 dummy questions를 삭제하고, 생성함수를 만듦**
 
-    - 문제생성함수(`generate()`)는 같은 파일에서 전역으로 선언된 문제 배열(Object를 원소로 가진 Array)을 바탕으로 article#question에 문제 요소들을 생성함
+    - 문제생성함수(`generate()`)는 같은 파일에서 전역으로 선언된 문제 배열(Object를 원소로 가진 Array)을 바탕으로
+      article#question에 문제 요소들을 생성함
 
     - 문제가 늘어날 경우, 간단하게 해당 Array만을 수정하면 됨
 
@@ -76,7 +86,8 @@
 
 - FEB 1, 22
 
-  - `5881529` `b0c01db` `f23e9f9` `983f997` 현재 페이지 번호 표시, 페이지 슬라이더 버튼 완성, 프로그레스 바 완성
+  - `5881529` `b0c01db` `f23e9f9` `983f997` 현재 페이지 번호 표시, 페이지 슬라이더 버튼 완성,
+    프로그레스 바 완성
 
     - 프로그레스 바의 경우, 각 문제를 풀 때마다 반응하게끔 함
 
@@ -113,5 +124,3 @@
 - jQuery의 제거 : 합산 함수, 프로그레스 바 반응 함수 등에서 jQuery 없이 동일한 기능을 구현
 
 - 로그인 페이지 추가(prompt > sign-in)
-
-- `how_to_use.md` 파일로 이 레포지토리 사용 가이드 제작
