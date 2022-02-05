@@ -9,7 +9,7 @@
 ```txt
 .(root)
 ├── README.md 
-├── how_to_use.md
+├── how_to_use_ez-ver.md
 ├── how_to_use_core-ver.md (현재 페이지)
 ├── img
 │   ├── ads
