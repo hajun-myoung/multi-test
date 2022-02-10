@@ -1,4 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
+import { PROBLEMS_AMOUNT } from "./generateQuestionElems.js";
+
+export default function setBar() {
   let inputBtns = document.getElementsByTagName("input");
 
   let radioBtns = [];
@@ -10,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   for (let item of radioBtns) {
     item.addEventListener("click", updateBar);
   }
-});
+}
 
 let checked = 0;
 
@@ -18,7 +20,7 @@ function updateBar() {
   let progressBar = document.getElementsByClassName("percentage")[0];
 
   checked = document.querySelectorAll("input:checked").length;
-  percentage = checked / PROBLEMS_AMOUNT;
+  let percentage = checked / PROBLEMS_AMOUNT;
 
   progressBar.style.width = `${Math.ceil(
     percentage * document.getElementById("progressBar").offsetWidth

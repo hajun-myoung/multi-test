@@ -1,4 +1,4 @@
-function color() {
+export default function color() {
   const EVEN_COLOR = "#6DB1BF";
   const ODD_COLOR = "#FFEAEC";
 
@@ -9,5 +9,3 @@ function color() {
 
   console.log("Done : Coloring");
 }
-
-window.addEventListener("DOMContentLoaded", color);
