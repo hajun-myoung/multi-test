@@ -82,7 +82,7 @@ function generateQuestionElem(QUESTIONS) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  fetch("/javascript/question.json")
+  fetch("./javascript/question.json")
     .then((response) => response.json())
     .then((question) => {
       // console.log(question);
