@@ -245,6 +245,8 @@ footer div.address{
 
 /* result page */
 #major {
+    width: 400px;
+
     font-size: 48px;
     font-weight: bold;
 
@@ -390,6 +392,22 @@ footer div.address{
     font-size: 18px;
 }
 
+/* canvas for result */
+#chart_and_major{
+    display: flex;
+}
+
+#chartDiv{
+    display: inline;
+}
+
+#myChart{
+    background: #FFF;
+
+    width: 400px !important;
+    height: 400px !important;
+}
+
 @media only screen and (max-width: 1220px){
     .ads{
         margin: 0;
@@ -500,6 +518,7 @@ footer div.address{
     }
 
     #major{
+        width: 350px;
         font-size: 34px;
     }
 
@@ -521,5 +540,19 @@ footer div.address{
 
     #ads{
         display: none;
+    }
+
+    #chart_and_major{
+        display: block;
+        width: 350px;
+    }
+
+    #chartDiv{
+        width: 350px;
+    }
+
+    #myChart{
+        width: 350px !important;
+        height: 350px !important;
     }
 }

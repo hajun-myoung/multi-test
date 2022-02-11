@@ -63,8 +63,23 @@ function createResult() {
     },
   ];
 
+  // 차트랑 메이저 결과 한 행으로 묶기
+  let chart_and_major = document.createElement("div");
+  chart_and_major.id = "chart_and_major";
+
   // resultDiv will contain whole contents
   let resultDiv = document.createElement("div");
+
+  let chartDiv = document.createElement("div");
+  chartDiv.id = "chartDiv";
+  let chartCanvas = document.createElement("canvas");
+  chartCanvas.id = "myChart";
+  // debugger;
+  chartCanvas.setAttribute("width", "400");
+  chartCanvas.setAttribute("height", "400");
+  chartDiv.appendChild(chartCanvas);
+
+  chart_and_major.appendChild(chartDiv);
 
   // div for major result
   calculateMaxVal(); // console.log(MaxValue);
@@ -95,15 +110,21 @@ function createResult() {
     else newDiv.id = `minor`;
 
     let newText = document.createTextNode(
-      `${userName}님의 ${idx + 1}번째 우수지능은 ${resultData[idx].type}입니다.`
+      idx == 0
+        ? `${userName}님은 ${resultData[idx].type}형 인재입니다.`
+        : `${userName}님의 ${idx + 1}번째 우수지능은 ${
+            resultData[idx].type
+          }입니다.`
     );
 
     newDiv.appendChild(newText);
 
     let newGraphDiv = document.createElement("div");
     let newGraph = document.createElement("span");
-    if (idx == 0) newGraphDiv.className += "majorGraph";
-    else newGraphDiv.className += "minorGraph";
+    if (idx == 0) {
+      newGraphDiv.style.width = "100%";
+      newGraphDiv.className += "majorGraph";
+    } else newGraphDiv.className += "minorGraph";
 
     newGraphDiv.appendChild(newGraph);
 
@@ -126,8 +147,46 @@ function createResult() {
     newDiv.appendChild(newGraphDiv);
     newDiv.appendChild(newDescription);
 
-    resultDiv.appendChild(newDiv);
+    if (idx == 0) {
+      chart_and_major.appendChild(newDiv);
+      resultDiv.appendChild(chart_and_major);
+    } else resultDiv.appendChild(newDiv);
   }
+
+  // 캔버스에 차트 드로잉
+  const myChart = new Chart(chartCanvas, {
+    type: "radar",
+    data: {
+      labels: ["유형1", "유형2", "유형3", "유형4", "유형5", "유형6"],
+      datasets: [
+        {
+          label: `${userName}님 검사결과`,
+          data: resultData.map((data) => data.val),
+          fill: true,
+          backgroundColor: "rgba(255, 99, 132, 0.2)",
+          borderColor: "rgb(255, 99, 132)",
+          pointBackgroundColor: "rgb(255, 99, 132)",
+          pointBorderColor: "#fff",
+          pointHoverBackgroundColor: "#fff",
+          pointHoverBorderColor: "rgb(255, 99, 132)",
+        },
+      ],
+    },
+    options: {
+      responsive: false,
+      scale: {
+        // beginAtZero: true,
+        max: 1.0,
+        min: 0.0,
+        stepSize: 0.2,
+      },
+      elements: {
+        line: {
+          borderWidth: 3,
+        },
+      },
+    },
+  });
 
   // 최종 초기화 및 반영
   document.getElementById("progressBar").style.display = "none";
@@ -142,6 +201,7 @@ function createResult() {
   document.getElementById("controller").style.display = "none";
 
   let questionDiv = document.getElementById("question");
+  questionDiv.style.height = "520px";
 
   questionDiv.scroll({
     top: 0,
